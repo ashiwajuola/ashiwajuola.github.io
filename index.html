@@ -1,37 +1,65 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Home | Fortunatus</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Ololajulo Fortunatus</title>
+<link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
-<nav>
-    <a href="index.html">Home</a>
-    <a href="about.html">About</a>
-    <a href="skills.html">Skills</a>
-    <a href="contact.html">Contact</a>
-</nav>
+<section class="hero animate">
+  <div class="diamond-wrapper">
+    <div class="diamond"></div>
+    <div class="hero-content animate floating">
+      <h1>Hello, I'm Fortunatus Ololajulo</h1>
+      <p>A 300 Level Software Engineering Student</p>
+      <button onclick="showMessage()">Click Me</button>
+    </div>
+  </div>
+</section>
 
-<main>
-    <header>
-        <h1>Hello, I'm Fortunatus Ololajulo</h1>
-        <p>A 300 Level Software Engineering Student</p>
-        <button onclick="alert('Welcome to my website!')">Click Me</button>
-    </header>
-</main>
+<section class="about animate">
+  <h2>About Me</h2>
+  <p>I am a Software Engineering student passionate about web development, modern UI design, and continuous learning in technology.</p>
+</section>
 
-<footer>
-    <p>© <span id="year"></span> Fortunatus. All Rights Reserved.</p>
+<section class="skills animate">
+  <h2>My Skills</h2>
+  <div class="skills-container">
+    <div class="skill-card animate">HTML</div>
+    <div class="skill-card animate">CSS</div>
+    <div class="skill-card animate">JavaScript</div>
+    <div class="skill-card animate">Git & GitHub</div>
+    <div class="skill-card animate">Problem Solving</div>
+  </div>
+</section>
+
+<section class="contact animate">
+  <h2>Contact</h2>
+  <p>Email: ololajulofortune@gmail.com</p>
+  <p>GitHub: <a href="https://github.com/ashiwajuola" target="_blank">github.com/ashiwajuola</a></p>
+</section>
+
+<footer class="footer animate">
+  <p>© 2025 Ololajulo Fortunatus Oyinlola</p>
 </footer>
 
 <script>
-    document.getElementById("year").textContent = new Date().getFullYear();
+function showMessage() {
+  alert("Welcome to my website!");
+}
+
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if(entry.isIntersecting){
+      entry.target.classList.add('show');
+    }
+  });
+}, { threshold: 0.2 });
+
+document.querySelectorAll('.animate').forEach(el => observer.observe(el));
 </script>
 
 </body>
 </html>
-
-
